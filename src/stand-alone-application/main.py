@@ -1,8 +1,9 @@
-import Tkinter
-from Tkinter import *
+import tkinter
+from tkinter import *
 import webbrowser
 import thrain
-import Tkinter, Tkconstants, tkFileDialog
+from tkinter import filedialog
+import tkinter, Tkconstants
 
 '''
 -----------------------------------------------------------------
@@ -33,15 +34,6 @@ def sendfilepage():
 
 def recievefilepage():
 	webbrowser.open_new(r"http://127.0.0.1:5000/file-directory")
-
-def opengithub(event):
-	webbrowser.open_new(r"https://github.com/parthendo/thrain")
-
-def openparthlinkedin(event):
-	webbrowser.open_new(r"https://in.linkedin.com/in/parth-trehan")
-
-def openhardiklinkedin(event):
-	webbrowser.open_new(r"https://in.linkedin.com/in/hardik-gaur-135891122")
 '''
 -----------------------------------------------------------------
 UPDATE ENTRY LABELS
@@ -223,28 +215,13 @@ def main():
 	ABOUTUS-SECTION
 	-------------------------------------------------------------
 	'''	
-	intro = Label(Aboutus, text="\nthrain - A secure file transfer system")
+	intro = Label(Aboutus, text="\n A secure file transfer system")
 	intro.grid(row=0)
-	text1 = Label(Aboutus, text="\nThrain enables its users to securely\ntransfer files in 'txt' format without\nany third party eavesdropping\n")
+	text1 = Label(Aboutus, text="\n enables its users to securely\ntransfer files in 'txt' format without\nany third party eavesdropping\n")
 	text1.grid(row=1)
-	githublink = Label(Aboutus, text="Know More", fg="blue", cursor="hand2")
-	githublink.bind("<Button-1>", opengithub)
-	githublink.grid(row=2)
 	# Add more content and remove padding newline accordingly
 	padding = Label(Aboutus, text="\n\n\n\n")
 	padding.grid(row=3)
-	text2 = Label(Aboutus, text="Contributed by: ")
-	text2.grid(row=4, sticky='S')
-	hardiksocial = Label(Aboutus, text="Hardik Gaur")
-	hardiksocial.bind("<Button-1>",openhardiklinkedin)
-	hardiksocial.grid(row=5, sticky='SW',padx = 8)
-	text3 = Label(Aboutus, text="|")
-	text3.grid(row=5)
-	parthsocial = Label(Aboutus, text="Parth Trehan")
-	parthsocial.bind("<Button-1>",openparthlinkedin)
-	parthsocial.grid(row=5, sticky='SE',padx = 8)
-
-
 	form.mainloop()
 
 if __name__ == "__main__":
